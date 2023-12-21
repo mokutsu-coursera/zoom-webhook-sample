@@ -34,7 +34,7 @@ app.use((req, res, next) => {
 // Webhook endpoint
 app.post('/webhook4', (req, res) => {
   const webhookEvent = req.body.event;
-
+  console.log(`request: ${req.body}`)
   // Validating the Webhook Endpoint URL
   if (webhookEvent === 'endpoint.url_validation') {
     const plainToken = req.body.payload.plainToken;
@@ -46,7 +46,7 @@ app.post('/webhook4', (req, res) => {
       plainToken: plainToken,
       encryptedToken: hashedToken
     };
-
+    console.log(`response json: ${responseJson}`)
     res.status(200).json(responseJson);
 
     console.log(`Webhook Endpoint URL validated by Zoom`);

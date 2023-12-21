@@ -1,3 +1,11 @@
+# QUICK START
+1. setup test app in zoom in https://marketplace.zoom.us/user/build
+2. copy paste from zoom app (feature > token) to configs in .env file, and run this app (eg `node customHeader.js`)
+3. expose port this app runs on (eg `ngrok http 4000`)
+4. copy/paste the public URL back into the app setup in step 1, `Event notification endpoint URL` in feature > general features > webhook configs.
+5. use the validate url button to send requests to the server, see logs for request/response info.
+
+
 # Zoom Webhook Verification Headers
 
 This guide will help you set up three different Express servers that implement distinct types of authentication: Basic Authentication, Token Authentication, and Custom Header Authentication. Each server responds to a specific webhook event named 'endpoint.url_validation'. The servers will verify incoming requests based on their respective authentication method and either proceed with the request or return a 401 Unauthorized response.
